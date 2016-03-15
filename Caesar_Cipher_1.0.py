@@ -40,15 +40,18 @@ def decrypt_letters(phrase, shift):
     decrypted_phrase = ""
     # for each letter in the phrase
     for letter in phrase.lower():
-        # if a space
-        if letter == ' ':
-            decrypted_phrase += " "
-        # if the index is less than the shift from zero - 'a'
-        elif (alphabet[alphabet.index(letter)] < (0 + int(shift))):
-            # add the letter from the differance starting at 'a' 
-            decrypted_phrase += alphabet[0 + (alphabet.index(letter) - int(shift))]
+        if letter.isalpha():
+            # if a space
+            if letter == ' ':
+                decrypted_phrase += " "
+            # if the index is less than the shift from zero - 'a'
+            elif (alphabet[alphabet.index(letter)] < (0 + int(shift))):
+                # add the letter from the differance starting at 'a' 
+                decrypted_phrase += alphabet[0 + (alphabet.index(letter) - int(shift))]
+            else:
+                decrypted_phrase += alphabet[alphabet.index(letter) - int(shift)]
         else:
-            decrypted_phrase += alphabet[alphabet.index(letter) - int(shift)]
+            decrypted_phrase += letter
     # pass decrypted phrase to be displayed
     display_new_phrase(decrypted_phrase, False)
 
