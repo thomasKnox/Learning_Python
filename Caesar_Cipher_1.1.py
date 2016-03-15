@@ -1,5 +1,5 @@
 """
- Caesar_Cipher_1.0.py
+ Caesar_Cipher_1.1.py
  Encrypts/Decrypts phrases based on specified shift
  Author: Thomas Knox <March, 2016>
 """
